@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>In-Club IT Center — Zamonaviy IT kasblarni o'rganing | Namangan</title>
+<meta name="description" content="In-Club IT Center — Yangiqo'rg'on, Namangandagi zamonaviy IT o'quv markazi. Dasturlash, dizayn, robototexnika va boshqa yo'nalishlar. Bepul maslahat uchun ariza qoldiring." />
+<link rel="icon" type="image/png" href="assets/inclub-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ====== ICON SPRITE ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-net" viewBox="0 0 48 48">
+    <g fill="none" stroke="rgba(150,170,210,0.55)" stroke-width="1.4">
+      <path d="M24 7 L24 23 M24 23 L24 39 M24 23 L40 23 M24 23 L8 23 M24 23 L35.3 11.7 M24 23 L12.7 11.7 M24 23 L35.3 34.3 M24 23 L12.7 34.3 M24 7 L35.3 11.7 M35.3 11.7 L40 23 M40 23 L35.3 34.3 M35.3 34.3 L24 39 M24 39 L12.7 34.3 M12.7 34.3 L8 23 M8 23 L12.7 11.7 M12.7 11.7 L24 7"/>
+    </g>
+    <g>
+      <circle cx="24" cy="23" r="4.4" fill="#3f7bff"/>
+      <circle cx="24" cy="7" r="3.4" fill="#3f7bff"/>
+      <circle cx="35.3" cy="11.7" r="2.7" fill="#dbe6ff"/>
+      <circle cx="40" cy="23" r="3" fill="#dbe6ff"/>
+      <circle cx="35.3" cy="34.3" r="2.5" fill="none" stroke="#3f7bff" stroke-width="1.8"/>
+      <circle cx="24" cy="39" r="3.1" fill="#3f7bff"/>
+      <circle cx="12.7" cy="34.3" r="2.7" fill="#dbe6ff"/>
+      <circle cx="8" cy="23" r="3.2" fill="#3f7bff"/>
+      <circle cx="12.7" cy="11.7" r="2.5" fill="none" stroke="#dbe6ff" stroke-width="1.6"/>
+    </g>
+  </symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><line x1="6" y1="7" x2="6.01" y2="7"/><line x1="6" y1="17" x2="6.01" y2="17"/></symbol>
+  <symbol id="i-phone-dev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 0 0-6 .5C4 6 3 7.5 3 9c0 1 .5 2 1 2.5C3.5 12 3 13 3 14c0 2 1.5 3.5 3.5 3.5"/><path d="M12 5a3 3 0 0 1 6 .5c2 .5 3 2 3 3.5 0 1-.5 2-1 2.5.5.5 1 1.5 1 2.5 0 2-1.5 3.5-3.5 3.5"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1 0 1.8-.8 1.8-1.8 0-.5-.2-.9-.5-1.2-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.7-1.7H16c3.3 0 6-2.7 6-6 0-4.9-4.5-8-10-8z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-teacher" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+</svg>
+
+<!-- ====== NAV ====== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top" aria-label="In-Club IT Center">
+      <svg class="ico"><use href="#i-net"/></svg>
+      <span class="wm"><span class="a">In-Club</span><span class="b">IT center</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#courses">Kurslar</a>
+      <a href="#why">Nega biz</a>
+      <a href="#how">Qanday qo'shilish</a>
+      <a href="#contact">Aloqa</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#register" class="btn btn-blue btn-sm">Ariza qoldirish</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menyu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<nav class="mobile-menu" aria-label="Mobil menyu">
+  <a href="#courses">Kurslar</a>
+  <a href="#why">Nega biz</a>
+  <a href="#how">Qanday qo'shilish</a>
+  <a href="#contact">Aloqa</a>
+  <a href="#register" class="btn btn-green">Bepul maslahat olish</a>
+</nav>
+
+<div id="top"></div>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-bg">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="glow1"></div>
+    <div class="glow2"></div>
+    <div class="ring"></div>
+  </div>
+  <div class="wrap hero-layout">
+    <div class="reveal" data-dir="left">
+      <span class="badge-pill"><svg width="14" height="14"><use href="#i-zap"/></svg> In-Club IT Center · Namangan</span>
+      <h1>IT sohasida <span class="b">muvaffaqiyatga</span> erishing!</h1>
+      <p class="lead">Zamonaviy texnologiyalarni o'rganib, kelajak kasbingizni bugun boshlang. Amaliyotga yo'naltirilgan kurslar, tajribali ustozlar va sertifikat — barchasi bir joyda.</p>
+      <div class="hero-cta">
+        <a href="#register" class="btn btn-green">Bepul maslahat olish <svg width="17" height="17"><use href="#i-arrow"/></svg></a>
+        <a href="#courses" class="btn btn-ghost">Kurslarni ko'rish</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="n" data-count="10" data-suffix="+">10+</div><div class="l">o'quv yo'nalishi</div></div>
+        <div class="hero-stat"><div class="n" data-count="500" data-suffix="+">500+</div><div class="l">bitiruvchilar</div></div>
+        <div class="hero-stat"><div class="n" data-count="100" data-suffix="%">100%</div><div class="l">amaliyotga yo'naltirilgan</div></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal" data-dir="scale">
+      <div class="logo-stage">
+        <span class="pulse-ring"></span>
+        <span class="pulse-ring"></span>
+        <span class="pulse-ring"></span>
+        <img src="assets/inclub-logo.png" alt="In-Club IT Center logotipi" />
+      </div>
+      <div class="float-chip c1"><span class="dot" style="background:var(--green)"></span><span class="t">Sertifikat beriladi</span></div>
+      <div class="float-chip c2"><span class="dot" style="background:var(--blue-2)"></span><span class="t">Karyera start</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TECH MARQUEE ====== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item"><svg width="20" height="20"><use href="#i-code"/></svg>Python</span>
+    <span class="marquee-item sep">/</span>
+    <span class="marquee-item"><svg width="20" height="20"><use href="#i-server"/></svg>Django</span>
+    <span class="marquee-item sep">/</span>
+    <span class="marquee-item"><svg width="20" height="20"><use href="#i-monitor"/></svg>JavaScript</span>
+    <span class="marquee-item sep">/</span>
+    <span class="marquee-item"><svg width="20" height="20"><use href="#i-code"/></svg>React</span>
+    <span class="marquee-item sep">/</span>
+    <span class="marquee-item"><svg width="20" height="20"><use href="#i-phone-dev"/></svg>Flutter</span>
+    <span class="marquee-item sep">/</span>
+    <span class="marquee-item"><svg width="20" height="20"><use href="#i-cpu"/></svg>Arduino</span>
+    <span class="marquee-item sep">/</span>
+    <span class="marquee-item"><svg width="20" height="20"><use href="#i-brain"/></svg>AI / ML</span>
+    <span class="marquee-item sep">/</span>
+    <span class="marquee-item"><svg width="20" height="20"><use href="#i-palette"/></svg>Figma</span>
+    <span class="marquee-item sep">/</span>
+    <span class="marquee-item"><svg width="20" height="20"><use href="#i-shield"/></svg>Cybersecurity</span>
+    <span class="marquee-item sep">/</span>
+  </div>
+</div>
+
+<!-- ====== FEATURES ====== -->
+<section class="features">
+  <div class="wrap"><div class="features-grid">
+    <div class="feature"><div class="fi"><svg width="22" height="22"><use href="#i-target"/></svg></div><div><div class="ft">Amaliyotga yo'naltirilgan</div><div class="fd">Nazariya emas, real loyihalar</div></div></div>
+    <div class="feature"><div class="fi"><svg width="22" height="22"><use href="#i-teacher"/></svg></div><div><div class="ft">Tajribali o'qituvchilar</div><div class="fd">Soha mutaxassislari</div></div></div>
+    <div class="feature"><div class="fi"><svg width="22" height="22"><use href="#i-award"/></svg></div><div><div class="ft">Sertifikat</div><div class="fd">Kursni tugatgach beriladi</div></div></div>
+    <div class="feature"><div class="fi"><svg width="22" height="22"><use href="#i-briefcase"/></svg></div><div><div class="ft">Karyera start</div><div class="fd">Ishga joylashishda yordam</div></div></div>
+  </div></div>
+</section>
+
+<!-- ====== COURSES ====== -->
+<section class="block" id="courses">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="left reveal">
+        <span class="eyebrow">Bizning kurslar</span>
+        <h2 class="section-title">O'zingizga mos yo'nalishni tanlang</h2>
+        <p class="section-sub">Har bir kurs amaliy mashg'ulotlar, jonli darslar va loyihalar asosida olib boriladi.</p>
+      </div>
+      <a href="#register" class="btn btn-ghost reveal">Kursga yozilish</a>
+    </div>
+    <div class="courses-grid">
+      <article class="course reveal"><div class="cglow"></div><div class="cnum">01</div><div class="cic"><svg width="24" height="24"><use href="#i-server"/></svg></div><h3>Backend dasturlash</h3><p>Server tomoni va ma'lumotlar bazasi bilan ishlash.</p><div class="ctags"><span class="ctag">Python</span><span class="ctag">Django</span><span class="ctag">PostgreSQL</span></div></article>
+      <article class="course reveal"><div class="cglow"></div><div class="cnum">02</div><div class="cic"><svg width="24" height="24"><use href="#i-code"/></svg></div><h3>Frontend web dasturlash</h3><p>Zamonaviy va interaktiv saytlar yaratish.</p><div class="ctags"><span class="ctag">HTML</span><span class="ctag">CSS</span><span class="ctag">JavaScript</span><span class="ctag">React</span></div></article>
+      <article class="course reveal"><div class="cglow"></div><div class="cnum">03</div><div class="cic"><svg width="24" height="24"><use href="#i-phone-dev"/></svg></div><h3>Mobile dasturlash</h3><p>Android va iOS uchun mobil ilovalar.</p><div class="ctags"><span class="ctag">Java</span><span class="ctag">Flutter</span><span class="ctag">React Native</span></div></article>
+      <article class="course reveal"><div class="cglow"></div><div class="cnum">04</div><div class="cic"><svg width="24" height="24"><use href="#i-monitor"/></svg></div><h3>Kompyuter savodxonligi</h3><p>Kompyuter va ofis dasturlari asoslari.</p><div class="ctags"><span class="ctag">Word</span><span class="ctag">Excel</span><span class="ctag">Canva</span></div></article>
+      <article class="course reveal"><div class="cglow"></div><div class="cnum">05</div><div class="cic"><svg width="24" height="24"><use href="#i-cpu"/></svg></div><h3>Robototexnika</h3><p>Mikrokontrollerlar va IoT qurilmalari.</p><div class="ctags"><span class="ctag">Arduino</span><span class="ctag">ESP32</span><span class="ctag">IoT</span></div></article>
+      <article class="course reveal"><div class="cglow"></div><div class="cnum">06</div><div class="cic"><svg width="24" height="24"><use href="#i-shield"/></svg></div><h3>Kiberxavfsizlik</h3><p>Tarmoq va tizimlarni himoya qilish.</p><div class="ctags"><span class="ctag">Ethical Hacking</span><span class="ctag">Security</span></div></article>
+      <article class="course reveal"><div class="cglow"></div><div class="cnum">07</div><div class="cic"><svg width="24" height="24"><use href="#i-brain"/></svg></div><h3>Sun'iy intellekt</h3><p>Mashinali o'qitish va data science.</p><div class="ctags"><span class="ctag">Python</span><span class="ctag">ML</span><span class="ctag">Deep Learning</span></div></article>
+      <article class="course reveal"><div class="cglow"></div><div class="cnum">08</div><div class="cic"><svg width="24" height="24"><use href="#i-palette"/></svg></div><h3>UX / UI dizayn</h3><p>Foydalanuvchi interfeysi va tajribasi dizayni.</p><div class="ctags"><span class="ctag">Figma</span><span class="ctag">Adobe XD</span><span class="ctag">Prototyping</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ====== WHY ====== -->
+<section class="block why" id="why">
+  <div class="wrap why-layout">
+    <div class="why-visual reveal">
+      <svg viewBox="0 0 48 48"><use href="#i-net"/></svg>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Nega In-Club</span>
+      <h2 class="section-title" style="margin:14px 0 6px">Bilim oling, kelajakni yarating</h2>
+      <div class="why-list">
+        <div class="why-item"><div class="wi"><svg width="24" height="24"><use href="#i-zap"/></svg></div><div><h4>Amaliy yondashuv</h4><p>Har bir mavzu real loyihalar bilan mustahkamlanadi — bilim ishda qoladi.</p></div></div>
+        <div class="why-item"><div class="wi"><svg width="24" height="24"><use href="#i-users"/></svg></div><div><h4>Kichik guruhlar</h4><p>Har bir o'quvchiga e'tibor va ustozning shaxsiy qo'llab-quvvatlovi.</p></div></div>
+        <div class="why-item"><div class="wi"><svg width="24" height="24"><use href="#i-award"/></svg></div><div><h4>Sertifikat va karyera</h4><p>Kursni tugatgach sertifikat va ishga joylashishda yo'naltirish.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== HOW ====== -->
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="block-head"><div class="left reveal">
+      <span class="eyebrow">Qanday qo'shilish</span>
+      <h2 class="section-title">To'rt qadamda biz bilan</h2>
+    </div></div>
+    <div class="steps">
+      <div class="step reveal"><div class="sn">01</div><h4>Ariza qoldiring</h4><p>Quyidagi formani to'ldiring — bir daqiqada.</p></div>
+      <div class="step reveal"><div class="sn">02</div><h4>Biz aloqaga chiqamiz</h4><p>Administrator bog'lanib, yo'nalishni aniqlaydi.</p></div>
+      <div class="step reveal"><div class="sn">03</div><h4>Bepul sinov darsi</h4><p>Markaz va o'qituvchilar bilan tanishasiz.</p></div>
+      <div class="step reveal"><div class="sn">04</div><h4>O'qishni boshlang</h4><p>Guruhga qo'shilib, birinchi loyihangizni boshlaysiz.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== REGISTER ====== -->
+<section class="block reg" id="register">
+  <div class="wrap reg-layout">
+    <div class="reg-aside reveal">
+      <span class="eyebrow">Ro'yxatdan o'tish</span>
+      <h2 class="section-title">Bepul maslahat uchun ariza qoldiring</h2>
+      <p class="section-sub">Formani to'ldiring — administratorlarimiz siz bilan tez orada bog'lanadi.</p>
+      <div class="reg-points">
+        <div class="reg-point"><span class="ck">✓</span><span>Birinchi sinov darsi <b>bepul</b></span></div>
+        <div class="reg-point"><span class="ck">✓</span><span>Yo'nalishni tanlashda yordam beramiz</span></div>
+        <div class="reg-point"><span class="ck">✓</span><span>Hech qanday majburiyatsiz</span></div>
+      </div>
+      <div class="reg-contact">
+        <a href="tel:+998935608005"><span class="ci"><svg width="18" height="18"><use href="#i-phone"/></svg></span><span>+998 93 560 80 05<small>Qo'ng'iroq qiling</small></span></a>
+        <a href="https://t.me/inclub_itcenter" target="_blank" rel="noopener"><span class="ci"><svg width="18" height="18"><use href="#i-send"/></svg></span><span>t.me/inclub_itcenter<small>Telegram orqali yozing</small></span></a>
+      </div>
+    </div>
+
+    <form class="reg-card reveal" id="regForm" novalidate>
+      <div class="reg-body">
+        <div class="row2">
+          <div class="field"><label>Ism <span class="req">*</span></label><input name="ism" type="text" placeholder="Ismingiz" autocomplete="given-name" /><div class="errmsg">Ismingizni kiriting</div></div>
+          <div class="field"><label>Familiya <span class="req">*</span></label><input name="familiya" type="text" placeholder="Familiyangiz" autocomplete="family-name" /><div class="errmsg">Familiyangizni kiriting</div></div>
+        </div>
+        <div class="field"><label>Telefon raqami <span class="req">*</span></label><input name="telefon" type="tel" placeholder="+998 90 123 45 67" inputmode="tel" autocomplete="tel" /><div class="errmsg">To'g'ri telefon raqamini kiriting</div></div>
+        <div class="field"><label>Yo'nalish <span class="req">*</span></label>
+          <select name="yonalish">
+            <option value="" disabled selected>Kursni tanlang</option>
+            <option>Backend dasturlash</option>
+            <option>Frontend web dasturlash</option>
+            <option>Mobile dasturlash</option>
+            <option>Kompyuter savodxonligi</option>
+            <option>Robototexnika</option>
+            <option>Kiberxavfsizlik</option>
+            <option>Sun'iy intellekt</option>
+            <option>UX / UI dizayn</option>
+            <option>Hali aniq emas — maslahat kerak</option>
+          </select>
+          <div class="errmsg">Yo'nalishni tanlang</div>
+        </div>
+        <div class="field"><label>Izoh <span style="color:var(--muted);font-weight:500">(ixtiyoriy)</span></label><textarea name="izoh" rows="2" placeholder="Qo'shimcha savol yoki izoh"></textarea></div>
+        <button type="submit" class="btn btn-green" id="submitBtn">Arizani yuborish</button>
+        <p class="form-foot">Yuborish orqali siz biz bilan bog'lanishimizga rozilik bildirasiz.</p>
+      </div>
+      <div class="reg-success">
+        <div class="ok">✓</div>
+        <h3>Arizangiz qabul qilindi!</h3>
+        <p>Tez orada siz bilan bog'lanamiz. In-Club IT Center'ga xush kelibsiz!</p>
+        <button type="button" class="btn btn-ghost" onclick="inclubResetForm()">Yana ariza qoldirish</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ====== LOCATION / CONTACT ====== -->
+<section class="block loc" id="contact">
+  <div class="wrap">
+    <div class="block-head"><div class="left reveal">
+      <span class="eyebrow">Aloqa va manzil</span>
+      <h2 class="section-title">Bizni toping</h2>
+    </div></div>
+    <div class="loc-layout">
+      <div class="loc-card reveal">
+        <span class="eyebrow">In-Club IT Center</span>
+        <h3 class="section-title">Kelajagingiz biz bilan boshlanadi</h3>
+        <p>Zamonaviy IT kasblarni Namangan, Yangiqo'rg'onda o'rganing.</p>
+        <div class="loc-meta">
+          <div><span class="li"><svg width="18" height="18"><use href="#i-pin"/></svg></span><span>Namangan viloyati, Yangiqo'rg'on tumani<small>
+</small></span></div>
+          <div><span class="li"><svg width="18" height="18"><use href="#i-phone"/></svg></span><span>+998 93 560 80 05 · +998 94 152 22 77<small>Har kuni 9:00 – 18:00</small></span></div>
+          <div><span class="li"><svg width="18" height="18"><use href="#i-globe"/></svg></span><span>www.inclub.uz<small>Rasmiy sayt</small></span></div>
+        </div>
+      </div>
+      <div class="loc-map reveal">
+        <iframe src="https://maps.google.com/maps?q=Yangiqo%27rg%27on%2C%20Namangan&z=12&output=embed" loading="lazy" title="In-Club IT Center manzili" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top"><svg class="ico"><use href="#i-net"/></svg><span class="wm"><span class="a">In-Club</span><span class="b">IT center</span></span></a>
+        <p>Yangiqo'rg'on, Namangandagi zamonaviy IT o'quv markazi. Bilim oling, kelajakni yarating.</p>
+        <div class="foot-social">
+          <a href="https://t.me/inclub_itcenter" target="_blank" rel="noopener" aria-label="Telegram"><svg width="20" height="20"><use href="#i-send"/></svg></a>
+          <a href="https://instagram.com/inclubuz" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20"><use href="#i-ig"/></svg></a>
+          <a href="https://www.inclub.uz" target="_blank" rel="noopener" aria-label="Sayt"><svg width="20" height="20"><use href="#i-globe"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Sayt</h5>
+        <a href="#courses">Kurslar</a>
+        <a href="#why">Nega biz</a>
+        <a href="#how">Qanday qo'shilish</a>
+        <a href="#register">Ro'yxatdan o'tish</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kurslar</h5>
+        <a href="#courses">Dasturlash</a>
+        <a href="#courses">Robototexnika</a>
+        <a href="#courses">Sun'iy intellekt</a>
+        <a href="#courses">UX / UI dizayn</a>
+      </div>
+      <div class="foot-col">
+        <h5>Aloqa</h5>
+        <a href="tel:+998935608005">+998 93 560 80 05</a>
+        <a href="tel:+998941522277">+998 94 152 22 77</a>
+        <a href="https://t.me/inclub_itcenter" target="_blank" rel="noopener">t.me/inclub_itcenter</a>
+        <p>Yangiqo'rg'on, Namangan</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> In-Club IT Center · Barcha huquqlar himoyalangan</span>
+      <span>www.inclub.uz</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
